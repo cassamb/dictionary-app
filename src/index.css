@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Afacad;
+    src: url(assets/fonts/Afacad-VariableFont_wght.ttf);
+}
+
+:root {
+    --bg-color: #DAB1AE;
+}

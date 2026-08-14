@@ -6,5 +6,12 @@
 }
 
 :root {
-    --bg-color: #DAB1AE;
+    --color-bg: #DAB1AE;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    font-family: "Afacad", sans-serif;
 }

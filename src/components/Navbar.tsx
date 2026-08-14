@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-/* TODO: Show that specific page is active in the logo by either passing the text in or by some other measure */
-
 const Navbar = () => {
     
     return (

@@ -5,7 +5,6 @@ import StudyToolsPage from "./pages/StudyToolsPage"
 import NotFoundPage from "./pages/NotFoundPage"
 import { RouterProvider } from "react-router-dom"
 import { createBrowserRouter } from "react-router-dom"
-import DefintionPage from "./pages/DefintionPage"
 
 function App() {
 
@@ -16,7 +15,6 @@ function App() {
       element: <MainLayout/>,
       children: [
         { index: true, element: <HomePage/>},
-        { path: "/:word", element: <DefintionPage/>},
         { path: "/games", element: <GamesPage/>},
         { path: "/study", element: <StudyToolsPage/>},
         { path: "*", element: <NotFoundPage/>},

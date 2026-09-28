@@ -1,8 +1,6 @@
-import type { DictionaryAPIResponse } from "../types/api";
+import type { DictionaryAPIResponse } from "../types/dictionaryAPI";
 
 export const getWordData = async (word: string): Promise<DictionaryAPIResponse | null> => {
-    if (word == "") return null;
-
     const res = await fetch(`https://freedictionaryapi.com/api/v1/entries/en/${word}`);
   
     if (!res.ok) throw new Error('Failed to fetch word data');

@@ -1,5 +1,6 @@
 import MainLayout from "./layouts/MainLayout"
 import HomePage from "./pages/HomePage"
+import DefinitionPage from "./pages/DefinitionPage"
 import GamesPage from "./pages/GamesPage"
 import StudyToolsPage from "./pages/StudyToolsPage"
 import NotFoundPage from "./pages/NotFoundPage"
@@ -15,6 +16,7 @@ function App() {
       element: <MainLayout/>,
       children: [
         { index: true, element: <HomePage/>},
+        { path: "/search/:word", element: <DefinitionPage/>},
         { path: "/games", element: <GamesPage/>},
         { path: "/study", element: <StudyToolsPage/>},
         { path: "*", element: <NotFoundPage/>},

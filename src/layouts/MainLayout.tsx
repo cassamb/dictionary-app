@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import WordOfTheDay from "../components/WordOfTheDay";
@@ -15,6 +16,7 @@ const MainLayout = () => {
         </main>
         <WordOfTheDay/>
       </div>
+      <ToastContainer/>
     </>
     
   )

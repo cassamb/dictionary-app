@@ -16,3 +16,29 @@
     font-family: "Afacad", sans-serif;
     /* border: 1px solid black; */
 }
+
+#definitions {
+    display: flex;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+/* SCROLLBAR STYLING */
+#definitions::-webkit-scrollbar { /* required */
+  width: 0.625rem;
+}
+
+#definitions::-webkit-scrollbar-track { /* scrollbar background */
+    background-color: white;
+    border-radius: 4px;
+}
+
+#definitions::-webkit-scrollbar-thumb { /* the actual scrollbar (draggable part) */
+    background-color: #998582;
+    border-radius: 4px;
+}
+
+#definitions::-webkit-scrollbar-thumb:hover { /* the scrollbar hover state */
+  cursor: pointer;
+  background-color: #887674;
+}

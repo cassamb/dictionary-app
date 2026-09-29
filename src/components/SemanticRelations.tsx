@@ -9,8 +9,9 @@ interface SemanticRelationProps {
 
 const SemanticRelations = ({type, words}: SemanticRelationProps) => {
     const [relatedWords, setRelatedWords] = useState<string[]>([]); 
+    const bgColor: string = type == "synonyms" ? "bg-[#3b5c50]" : "bg-[#563b5c]";
     
-    useEffect(() => setRelatedWords(filterAlphabeticalStrings(words)), []);
+    useEffect(() => setRelatedWords(filterAlphabeticalStrings(words)));
 
   return (
     <aside className="font-semibold py-3 flex flex-wrap justify-baseline gap-1.5 md:gap-2.5">
@@ -20,7 +21,7 @@ const SemanticRelations = ({type, words}: SemanticRelationProps) => {
 
         {relatedWords.map((word, index) => {
             return (
-                <Link to={`/search/${word}`} key={index} className="capitalize cursor-pointer text-white text-sm p-2 bg-[#3b5c50] rounded-md transition-all duration-300 hover:-translate-y-1 md:p-3 md:text-base">
+                <Link to={`/search/${word}`} key={index} className={`capitalize cursor-pointer text-white text-sm p-2 ${bgColor} rounded-md transition-all duration-300 hover:-translate-y-1 md:p-3 md:text-base`}>
                     {word}
                 </Link>
             )

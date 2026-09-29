@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import type { DictionaryAPIResponse } from "../utils/types/dictionaryAPI";
 import { getWordData } from "../utils/api/fetch";
+import Definitions from "../components/Definitions";
 import SemanticRelations from "../components/SemanticRelations";
 
 const DefinitionPage = () => {
@@ -15,6 +16,7 @@ const DefinitionPage = () => {
     }
       
     const data = await getWordData(word);
+    console.log(data)
     setWordData(data);
     
   };
@@ -32,21 +34,14 @@ const DefinitionPage = () => {
           <section key={index} className="my-4">
 
             <h5 className="uppercase text-[#4d3432] font-semibold md:text-lg">{data.partOfSpeech}</h5>
+            
+            <div id="definitions">
+              <Definitions senses={data.senses}/>
+              <div className="w-5"></div>
+            </div>
 
-            {/* definitions */}
-            <section className="bg-[#998582] rounded-lg flex flex-col p-4 gap-3">
-              {data.senses.map((def, def_index) => {
-                return (
-                  <div key={def_index} className={def_index < 9 ? "flex gap-5.5" : "flex gap-4.5"}>
-                    <h6 className={def_index < 9 ? "my-auto ml-3 font-semibold text-lg md:text-xl" : "my-auto ml-1.5 font-semibold text-lg md:text-xl"}>{def_index+1}</h6>
-                    <p className="bg-white rounded-lg text-sm p-3 grow md:text-base">{def.definition}</p>
-                  </div>
-                )
-              })}
-            </section>
-
-            <SemanticRelations type={"synonymns"} words={data.synonyms}/>
-            <SemanticRelations type={"antonymns"} words={data.antonyms}/>
+            <SemanticRelations type={"synonyms"} words={data.synonyms}/>
+            <SemanticRelations type={"antonyms"} words={data.antonyms}/>
             
           </section>
         )

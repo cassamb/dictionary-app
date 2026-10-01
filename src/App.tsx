@@ -6,10 +6,9 @@ import StudyToolsPage from "./pages/StudyToolsPage"
 import NotFoundPage from "./pages/NotFoundPage"
 import { RouterProvider } from "react-router-dom"
 import { createBrowserRouter } from "react-router-dom"
+import { RandomWordsProvider } from "./context/RandomWordsContext"
 
 function App() {
-
-  // Instantiating the router
   const router = createBrowserRouter([
     {
       path: "/",
@@ -24,8 +23,11 @@ function App() {
     }
   ]);
 
-  // Enabling routing throughout the program
-  return <RouterProvider router={router}/>
+  return (
+    <RandomWordsProvider>
+      <RouterProvider router={router}/>
+    </RandomWordsProvider>
+  ) 
 }
 
 export default App

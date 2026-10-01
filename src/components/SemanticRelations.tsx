@@ -11,7 +11,7 @@ const SemanticRelations = ({type, words}: SemanticRelationProps) => {
     const [relatedWords, setRelatedWords] = useState<string[]>([]); 
     const bgColor: string = type == "synonyms" ? "bg-[#3b5c50]" : "bg-[#563b5c]";
     
-    useEffect(() => setRelatedWords(filterAlphabeticalStrings(words)));
+    useEffect(() => setRelatedWords(filterAlphabeticalStrings(words)), [words]);
 
   return (
     <aside className="font-semibold py-3 flex flex-wrap justify-baseline gap-1.5 md:gap-2.5">

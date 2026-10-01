@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
+import RandomButton from "./RandomButton";
 
 const SearchBar = () => {
     const navigate = useNavigate();
@@ -20,11 +21,6 @@ const SearchBar = () => {
         }
     }
 
-    const handleRandomSearch = (e: React.MouseEvent<HTMLButtonElement>): void => {
-        e.preventDefault();
-        console.log("button clicked");
-    }
-
   return (
     <search className="text-sm font-semibold md:flex md:gap-4 md:text-base">
         <form onSubmit={handleSearch} className="flex gap-2 rounded-lg bg-[#4d3432] p-2 md:w-6/7">
@@ -37,9 +33,8 @@ const SearchBar = () => {
             />
             <button type="submit" className="w-1/5 max-w-20 rounded-md bg-[#bfafad] p-1.5 text-center cursor-pointer transition-all duration-300 hover:scale-90">Search</button>
         </form> 
-        <button onClick={handleRandomSearch} className="grow rounded-lg bg-[#532425] text-center text-white cursor-pointer transition-all duration-300 hover:scale-90 md:block">Random</button>
+        <RandomButton/>
     </search>
-    
   )
 }
 

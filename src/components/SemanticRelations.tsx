@@ -21,7 +21,7 @@ const SemanticRelations = ({type, words}: SemanticRelationProps) => {
 
         {relatedWords.map((word, index) => {
             return (
-                <Link to={`/search/${word}`} key={index} className={`capitalize cursor-pointer text-white text-sm p-2 ${bgColor} rounded-md transition-all duration-300 hover:-translate-y-1 md:p-3 md:text-base`}>
+                <Link to={`/search/${word}`} key={index} className={`capitalize cursor-pointer text-white text-sm p-2 ${bgColor} rounded-md transition-all duration-300 hover:scale-90 md:p-3 md:text-base`}>
                     {word}
                 </Link>
             )

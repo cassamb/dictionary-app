@@ -6,6 +6,5 @@ export const getWordData = async (word: string): Promise<DictionaryAPIResponse |
     if (!res.ok) throw new Error('Failed to fetch word data');
 
     const data = await res.json();
-    console.log(data);
     return data;
 }

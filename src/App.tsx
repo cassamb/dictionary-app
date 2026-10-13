@@ -8,6 +8,19 @@ import { RouterProvider } from "react-router-dom"
 import { createBrowserRouter } from "react-router-dom"
 import { RandomWordsProvider } from "./context/RandomWordsContext"
 
+// TODOs
+// General
+//  - [] responsive design implementation
+//    - [x] mobile
+//    - [x] tablet
+//    - [] laptop/desktop (mainly just navbar text size and general component spacing)
+//  - [] implement different layouts for other pages
+//  - [] customize toast design to better match UI
+// Word of the Day
+//  - [] create JSON file to store WOD info
+//  - [] implement Random Word Search functionality (except we maintain the state of the word once a suitable option is found)
+//  - [] implement animations for the section as it expands and condenses
+
 function App() {
   const router = createBrowserRouter([
     {

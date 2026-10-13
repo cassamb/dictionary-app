@@ -1,44 +1,61 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: Afacad;
-    src: url(assets/fonts/Afacad-VariableFont_wght.ttf);
+  font-family: Afacad;
+  src: url(assets/fonts/Afacad-VariableFont_wght.ttf);
 }
 
-:root {
-    --color-bg: #DAB1AE;
+@theme { 
+  --color-primary: #DAB1AE;         
+  --color-primary-light: #BFAFAD;   
+  --color-primary-med: #4E4E4E;     
+  --color-primary-dark: #4D3432;    
+
+  --color-accent: #874D49;          
+  --color-accent-light: #DB948F;    
+  --color-accent-med: #5E2425;      
+  --color-accent-dark: #4C1F20;    
+
+  --color-definitions: #998582;
+  --color-definitions-dark: #887674;
 }
 
 #root {
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--color-bg);
-    font-family: "Afacad", sans-serif;
-    /* border: 1px solid black; */
-}
-
-#definitions {
-    display: flex;
-    max-height: 350px;
-    overflow-y: auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  font-family: "Afacad", sans-serif;
 }
 
 /* SCROLLBAR STYLING */
-#definitions::-webkit-scrollbar { /* required */
-  width: 0.625rem;
+section.definitions::-webkit-scrollbar { 
+  width: 6px;
 }
 
-#definitions::-webkit-scrollbar-track { /* scrollbar background */
-    background-color: white;
-    border-radius: 4px;
+div.semantic-relations::-webkit-scrollbar { 
+  height: 6px;
 }
 
-#definitions::-webkit-scrollbar-thumb { /* the actual scrollbar (draggable part) */
-    background-color: #998582;
-    border-radius: 4px;
+/* scrollbar background */
+section.definitions::-webkit-scrollbar-track,
+div.semantics::-webkit-scrollbar-track { 
+  border-radius: 4px;
 }
 
-#definitions::-webkit-scrollbar-thumb:hover { /* the scrollbar hover state */
+section.definitions::-webkit-scrollbar-track { 
+  background-color: white;
+}
+
+/* the actual scrollbar (draggable part) */
+section.definitions::-webkit-scrollbar-thumb, 
+div.semantic-relations::-webkit-scrollbar-thumb {  
+  background-color: var(--color-definitions);
+  border-radius: 4px;
+}
+
+/* the scrollbar hover state */
+section.definitions::-webkit-scrollbar-thumb:hover,
+div.semantic-relations::-webkit-scrollbar-thumb:hover {  
   cursor: pointer;
-  background-color: #887674;
+  background-color: var(--color-definitions-dark);
 }

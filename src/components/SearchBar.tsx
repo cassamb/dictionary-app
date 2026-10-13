@@ -23,17 +23,19 @@ const SearchBar = () => {
 
   return (
     <search className="text-sm font-semibold md:flex md:gap-4 md:text-base">
-        <form onSubmit={handleSearch} className="flex gap-2 rounded-lg bg-[#4d3432] p-2 md:w-6/7">
+        <form onSubmit={handleSearch} className="flex gap-2 rounded-lg bg-primary-dark p-2 md:w-6/7">
             <input 
                 type="search" 
                 name="search" 
                 placeholder="Please enter a word ..." 
-                className="grow rounded-md bg-white p-2 border-2 border-[#4d3432] focus:outline-none"
+                className="grow rounded-md bg-white p-2 border-2 border-primary-dark focus:outline-none"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWord(e.target.value)} 
             />
-            <button type="submit" className="w-1/5 max-w-20 rounded-md bg-[#bfafad] p-1.5 text-center cursor-pointer transition-all duration-300 hover:scale-90">Search</button>
+            <button type="submit" className="w-1/5 max-w-20 rounded-md bg-primary-light p-1.5 text-center cursor-pointer transition-all duration-300 hover:scale-90">Search</button>
         </form> 
-        <RandomButton/>
+        <div className="hidden md:block md:grow">
+            <RandomButton/>
+        </div>
     </search>
   )
 }
